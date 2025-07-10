@@ -43,3 +43,37 @@ Add this PostgreSQL JDBC dependency in your pom.xml:
 </dependency>
 
 
+# Prerequisites
+Before running the project, ensure you have the following installed:
+
+Java Development Kit (JDK) 17 or higher.
+
+PostgreSQL 15 or higher.
+
+Any Java IDE (e.g., IntelliJ, VS Code, Eclipse).
+
+# Database Setup
+Create the required tables in your PostgreSQL database by executing the following SQL:
+
+CREATE TABLE milk_provider (
+    provider_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    contact VARCHAR(20),
+    address VARCHAR(255)
+);
+
+CREATE TABLE milk_record (
+    record_id SERIAL PRIMARY KEY,
+    provider_id INT REFERENCES milk_provider(provider_id),
+    date DATE NOT NULL,
+    quantity DOUBLE PRECISION,
+    fat_content DOUBLE PRECISION,
+    rate_per_litre DOUBLE PRECISION
+);
+
+CREATE TABLE payment (
+    payment_id SERIAL PRIMARY KEY,
+    provider_id INT REFERENCES milk_provider(provider_id),
+    amount DOUBLE PRECISION,
+    payment_date DATE
+);
