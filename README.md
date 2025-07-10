@@ -77,3 +77,18 @@ CREATE TABLE payment (
     amount DOUBLE PRECISION,
     payment_date DATE
 );
+
+
+# Contact
+
+For any questions or feedback, feel free to reach out:
+
+Name: 1) Shruti Shivaji Kholgade
+      2) Avantika Dashrath Firange
+      
+
+Email: 1) shrutikholgade@gmail.com
+       2) firangeavantika07@gmail.com
+       
+
+GitHub: Shru19Kholgade
